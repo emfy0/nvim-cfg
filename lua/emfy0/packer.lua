@@ -14,6 +14,8 @@ return require('packer').startup(function(use)
 
   use 'lewis6991/gitsigns.nvim'
 
+  use 'slim-template/vim-slim'
+
   use 'michaeljsmith/vim-indent-object'
 
   use 'qpkorr/vim-bufkill'
