@@ -4,9 +4,6 @@ vim.keymap.set("n", "gn", ":bnext<CR>")
 vim.keymap.set("n", "gp", ":bprev<CR>")
 vim.keymap.set("n", "<leader>q", ":BD<CR>")
 
-vim.keymap.set("n", "%", "ggVG")
-vim.keymap.set("v", "%", "ggVG")
-
 vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
 
