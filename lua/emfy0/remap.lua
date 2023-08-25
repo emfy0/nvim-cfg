@@ -31,7 +31,6 @@ vim.keymap.set("n", "U", ":redo<CR>")
 
 vim.keymap.set("i", "<A-BACKSPACE>", "<C-w>")
 
-vim.keymap.set("n", "p", "pgvy")
 vim.keymap.set("v", "p", "pgvy")
 
 vim.keymap.set("n", "<leader>n", ":let @+ = expand(\"%\")<CR>")

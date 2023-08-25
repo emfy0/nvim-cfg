@@ -1,7 +1,12 @@
+local lspconfig = require('lspconfig')
+lspconfig.emmet_language_server.setup{
+  filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "heex" }
+}
+
+
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
--- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
 
 local cmp = require('cmp')

@@ -6,6 +6,8 @@ local lazygit = Terminal:new({
     direction = "float",
     float_opts = {
         border = "double",
+        width = 1000,
+        height = 1000,
     },
     -- function to run on opening the terminal
     on_open = function(term)
