@@ -22,6 +22,10 @@ return require('packer').startup(function(use)
 
   use 'slim-template/vim-slim'
 
+  use {'akinsho/git-conflict.nvim', tag = "*", config = function()
+    require('git-conflict').setup()
+  end}
+
   use 'michaeljsmith/vim-indent-object'
 
   use 'qpkorr/vim-bufkill'
