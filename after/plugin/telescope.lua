@@ -1,3 +1,5 @@
+-- require("telescope.health").check()
+
 local builtin = require('telescope.builtin')
 
 local telescope = require('telescope')

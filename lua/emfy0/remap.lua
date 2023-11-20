@@ -33,7 +33,7 @@ vim.keymap.set("i", "<A-BACKSPACE>", "<C-w>")
 
 vim.keymap.set("v", "p", "pgvy")
 
-vim.keymap.set("n", "<leader>n", ":let @+ = expand(\"%\")<CR>")
+vim.keymap.set("n", "<leader>n", ":let @+ = expand(\"%:~:.\")<CR>")
 
 vim.keymap.set("n", "<leader>o", ":%bd|e#|bnext|BD<CR>")
 
