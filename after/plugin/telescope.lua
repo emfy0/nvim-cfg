@@ -31,5 +31,5 @@ function telescope_resume()
   end
 end
 
-vim.keymap.set("n", "<leader>\\", telescope_resume)
+vim.keymap.set("n", "<leader>F", telescope_resume)
 
