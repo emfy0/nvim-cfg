@@ -2,6 +2,12 @@ local lspconfig = require('lspconfig')
 lspconfig.emmet_language_server.setup{
   filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "heex" }
 }
+lspconfig.crystalline.setup{
+  cmd = { "crystalline" },
+  filetypes = { "crystal" },
+  root_dir = lspconfig.util.root_pattern("shard.yml", ".git"),
+  single_file_support = true
+}
 
 local lsp = require('lsp-zero')
 lsp.preset('recommended')

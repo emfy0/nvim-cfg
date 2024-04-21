@@ -10,7 +10,18 @@ return require('packer').startup(function(use)
 
   use { 'catppuccin/nvim', as = 'catppuccin' }
 
-  use 'terrortylor/nvim-comment'
+  use({ -- autoclose and autorename tags
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        autotag = {
+          enable = true,
+        },
+      })
+    end,
+  })
+
+  use 'numToStr/Comment.nvim'
 
   use 'lewis6991/gitsigns.nvim'
 
@@ -103,6 +114,36 @@ return require('packer').startup(function(use)
     require("toggleterm").setup()
   end}
 
+  use({
+    'Wansmer/treesj',
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('treesj').setup({
+        ---@type boolean Use default keymaps (<space>m - toggle, <space>j - join, <space>s - split)
+        use_default_keymaps = true,
+        ---@type boolean Node with syntax error will not be formatted
+        check_syntax_error = true,
+        ---If line after join will be longer than max value,
+        ---@type number If line after join will be longer than max value, node will not be formatted
+        max_join_length = 120,
+        ---Cursor behavior:
+        ---hold - cursor follows the node/place on which it was called
+        ---start - cursor jumps to the first symbol of the node being formatted
+        ---end - cursor jumps to the last symbol of the node being formatted
+        ---@type 'hold'|'start'|'end'
+        cursor_behavior = 'hold',
+        ---@type boolean Notify about possible problems or not
+        notify = true,
+        ---@type boolean Use `dot` for repeat action
+        dot_repeat = true,
+        ---@type nil|function Callback for treesj error handler. func (err_text, level, ...other_text)
+        on_error = nil,
+        ---@type table Presets for languages
+        -- langs = {}, -- See the default presets in lua/treesj/langs
+      })
+    end,
+  })
+
   use {
     "folke/which-key.nvim",
     config = function()
@@ -115,5 +156,7 @@ return require('packer').startup(function(use)
       }
     end
   }
+
+  use 'vim-crystal/vim-crystal'
 end)
 
