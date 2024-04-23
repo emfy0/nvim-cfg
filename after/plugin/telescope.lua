@@ -9,6 +9,17 @@ telescope.setup {
     find_files = {
       hidden = true
     }
+  },
+  defaults = {
+    vimgrep_arguments = {
+      "rg",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--hidden"
+    }
   }
 }
 
@@ -20,16 +31,4 @@ vim.keymap.set('n', '<leader>/', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
-local telescope_last = 0
-
-function telescope_resume()
-  if telescope_last == 0 then
-    telescope_last = 1
-    builtin.find_files()
-  else
-    builtin.resume()
-  end
-end
-
-vim.keymap.set("n", "<leader>F", telescope_resume)
-
+vim.keymap.set("n", "<leader>F", builtin.resume, {})
