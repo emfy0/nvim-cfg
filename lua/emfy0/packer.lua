@@ -25,11 +25,23 @@ return require('packer').startup(function(use)
 
   use 'lewis6991/gitsigns.nvim'
 
+  use 'towolf/vim-helm'
+
+  use 'tpope/vim-abolish'
+
   use({
     "nvim-treesitter/nvim-treesitter-textobjects",
     after = "nvim-treesitter",
     requires = "nvim-treesitter/nvim-treesitter",
   })
+
+  use {
+    "ngscheurich/edeex.nvim",
+    requires = "nvim-treesitter/nvim-treesitter",
+    config = function ()
+      require("edeex").setup({mapping = "<C-e>", autoformat = false})
+    end
+  }
 
   use 'slim-template/vim-slim'
 
