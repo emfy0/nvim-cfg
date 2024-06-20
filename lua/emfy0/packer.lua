@@ -11,14 +11,7 @@ return require('packer').startup(function(use)
   use { 'catppuccin/nvim', as = 'catppuccin' }
 
   use({ -- autoclose and autorename tags
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        autotag = {
-          enable = true,
-        },
-      })
-    end,
+    "windwp/nvim-ts-autotag", requires = "nvim-treesitter/nvim-treesitter"
   })
 
   use 'numToStr/Comment.nvim'
@@ -120,8 +113,6 @@ return require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  use "github/copilot.vim"
-
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup()
   end}
@@ -170,5 +161,11 @@ return require('packer').startup(function(use)
   }
 
   use 'vim-crystal/vim-crystal'
+
+  use({
+    'apple/pkl-neovim',
+    requires = "nvim-treesitter/nvim-treesitter",
+    run = ":TSInstall! pkl"
+  })
 end)
 

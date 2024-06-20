@@ -53,3 +53,5 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+vim.cmd([[autocmd FileType ruby setlocal indentkeys-=.]])
