@@ -15,6 +15,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  'nvim-lua/plenary.nvim',
   'numToStr/Comment.nvim',
   'lewis6991/gitsigns.nvim',
   'towolf/vim-helm',
@@ -28,6 +29,10 @@ local plugins = {
   'norcalli/nvim-colorizer.lua',
   'mg979/vim-visual-multi',
   'vim-crystal/vim-crystal',
+  {
+    'polarmutex/git-worktree.nvim',
+    dependencies = { "nvim-lua/plenary.nvim" }
+  },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { 'akinsho/git-conflict.nvim', version = "*", config = true },
   {
