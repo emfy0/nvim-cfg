@@ -30,6 +30,13 @@ local plugins = {
   'mg979/vim-visual-multi',
   'vim-crystal/vim-crystal',
   {
+    "stevearc/oil.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      { "echasnovski/mini.icons", opts = {} }
+    },
+  },
+  {
     'polarmutex/git-worktree.nvim',
     dependencies = { "nvim-lua/plenary.nvim" }
   },
@@ -176,10 +183,6 @@ local plugins = {
   }
 }
 
-local opts = {
-	-- defaults = {
-	-- 	lazy = false,
-	-- }
-}
+local opts = { }
 
 require('lazy').setup(plugins, opts)

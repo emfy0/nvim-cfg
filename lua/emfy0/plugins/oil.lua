@@ -1,0 +1,36 @@
+CustomOilBar = function()
+  local path = vim.fn.expand "%"
+  path = path:gsub("oil://", "")
+
+  return "  " .. vim.fn.fnamemodify(path, ":.")
+end
+
+require("oil").setup {
+  skip_confirm_for_simple_edits = true,
+  watch_for_changes = false,
+  columns = { "icon" },
+  keymaps = {
+    ["<C-s>"] = false,
+    ["<C-v>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
+    ["<C-c>"] = false,
+    ["q"] = "actions.close",
+  -- ["<C-l>"] = false,
+  -- ["<C-k>"] = false,
+  -- ["<C-j>"] = false,
+  },
+  win_options = {
+    winbar = "%{v:lua.CustomOilBar()}",
+  },
+  view_options = {
+    show_hidden = true,
+  },
+  view_options = {
+    show_hidden = true,
+  },
+}
+
+-- Open parent directory in current window
+vim.keymap.set("n", "-", require("oil").toggle_float, { desc = "Open parent directory" })
+
+-- Open parent directory in floating window
+-- vim.keymap.set("n", "<space>e", require("oil").toggle_float)
