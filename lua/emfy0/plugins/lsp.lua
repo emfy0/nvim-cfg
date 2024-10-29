@@ -54,4 +54,4 @@ end)
 
 lsp.setup()
 
-vim.cmd([[autocmd FileType ruby setlocal indentkeys-=.]])
+vim.cmd([[filetype indent off]])

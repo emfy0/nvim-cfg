@@ -36,10 +36,6 @@ local plugins = {
       { "echasnovski/mini.icons", opts = {} }
     },
   },
-  {
-    'polarmutex/git-worktree.nvim',
-    dependencies = { "nvim-lua/plenary.nvim" }
-  },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { 'akinsho/git-conflict.nvim', version = "*", config = true },
   {
