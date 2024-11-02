@@ -10,8 +10,8 @@ require("oil").setup {
   watch_for_changes = false,
   columns = { "icon" },
   keymaps = {
-    ["<C-s>"] = false,
-    ["<C-v>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
+    -- ["<C-s>"] = false,
+    -- ["<C-v>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
     ["<C-c>"] = false,
     ["q"] = "actions.close",
   -- ["<C-l>"] = false,
