@@ -30,6 +30,12 @@ local plugins = {
   'mg979/vim-visual-multi',
   'vim-crystal/vim-crystal',
   {
+    "albenisolmos/telescope-oil.nvim",
+    config = function()
+      require("telescope").load_extension("oil")
+    end
+  },
+  {
     "stevearc/oil.nvim",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
