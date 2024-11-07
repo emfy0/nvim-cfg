@@ -30,6 +30,11 @@ telescope.setup {
   pickers = {
     find_files = {
       hidden = true
+    },
+    mappings = {
+      i = {
+        ["<C-v>"] = nil
+      }
     }
   },
   defaults = {

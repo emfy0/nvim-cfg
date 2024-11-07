@@ -14,9 +14,10 @@ require("oil").setup {
     -- ["<C-v>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
     ["<C-c>"] = false,
     ["q"] = "actions.close",
-  -- ["<C-l>"] = false,
-  -- ["<C-k>"] = false,
-  -- ["<C-j>"] = false,
+    ["<C-h>"] = false,
+    ["<C-j>"] = false,
+    ["<C-k>"] = false,
+    ["<C-l>"] = false,
   },
   win_options = {
     winbar = "%{v:lua.CustomOilBar()}",
@@ -31,4 +32,4 @@ require("oil").setup {
 vim.keymap.set("n", "<leader>e", "<cmd>Telescope oil<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 -- Open parent directory in floating window
--- vim.keymap.set("n", "<space>e", require("oil").toggle_float)
+-- vim.keymap.set("n", "-", require("oil").toggle_float)
