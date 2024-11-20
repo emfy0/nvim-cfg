@@ -182,7 +182,18 @@ local plugins = {
         -- langs = {}, -- See the default presets in lua/treesj/langs
       })
     end,
-  }
+  },
+  {
+    "luckasRanarison/tailwind-tools.nvim",
+    name = "tailwind-tools",
+    build = ":UpdateRemotePlugins",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim", -- optional
+      "neovim/nvim-lspconfig", -- optional
+    },
+    opts = {} -- your configuration
+  },
 }
 
 local opts = { }

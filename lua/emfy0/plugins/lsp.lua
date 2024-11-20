@@ -1,4 +1,6 @@
 local lspconfig = require('lspconfig')
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 lspconfig.emmet_language_server.setup{
   filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "heex" }
 }
@@ -14,6 +16,16 @@ lspconfig.helm_ls.setup {}
 
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
+
+-- lspconfig.tailwindcss.setup({
+--   init_options = {
+--     userLanguages = {
+--       elixir = "html-eex",
+--       eelixir = "html-eex",
+--       heex = "html-eex",
+--     },
+--   },
+-- })
 
 lsp.nvim_workspace()
 
@@ -54,4 +66,13 @@ end)
 
 lsp.setup()
 
+lspconfig.tailwindcss.setup({
+  init_options = {
+    userLanguages = {
+      elixir = "html-eex",
+      eelixir = "html-eex",
+      heex = "html-eex",
+    },
+  },
+})
 vim.cmd([[filetype indent off]])
