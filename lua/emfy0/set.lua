@@ -32,6 +32,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.filetype.add {
   extension = {
     jbuilder = 'ruby',
+    mjml = 'eruby',
   }
 }
 
